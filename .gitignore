@@ -15,4 +15,4 @@
 # vendor/
 /logs
 .env
-
+.idea
