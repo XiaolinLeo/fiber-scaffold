@@ -17,6 +17,7 @@ var startAppCmd = &cobra.Command{
 		utils.SetupCron()
 		server := app.Create()
 		app.SetupRouters(server)
+
 		if err := app.Listen(server); err != nil {
 			log.Panic(err)
 		}
