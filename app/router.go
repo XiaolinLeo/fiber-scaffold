@@ -13,6 +13,9 @@ import (
 //var embedDirStatic embed.FS
 
 func SetupRouters(app *fiber.App) {
+	app.Use(func(c *fiber.Ctx) error {
+		return c.Status(fiber.StatusNotFound).SendString("Sorry can't find that!")
+	})
 	admin := app.Group("/user")
 	admin.Post("/login", user.UserLogin)
 	admin.Post("/info", user.UserInfo)

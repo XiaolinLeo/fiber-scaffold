@@ -16,9 +16,6 @@ func Create() *fiber.App {
 	app.Use(recover.New())
 	app.Use(logger.New())
 	app.Use(cors.New())
-	app.Use(func(c *fiber.Ctx) error {
-		return c.Status(fiber.StatusNotFound).SendString("Sorry can't find that!")
-	})
 
 	return app
 }
