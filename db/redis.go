@@ -4,6 +4,7 @@ import (
 	"context"
 	"fiber-scaffold/common/logging"
 	"github.com/go-redis/redis/v8"
+	"github.com/spf13/viper"
 	"time"
 )
 
@@ -12,9 +13,9 @@ var Rdb *redis.Client
 func SetupRedis() {
 	Rdb = redis.NewClient(&redis.Options{
 		//相关信息放到config 本地调试
-		Addr:     "127.0.0.1:6379",
-		Password: "",
-		DB:       1,
+		Addr:     viper.GetString("REDIS.ADDR"),
+		Password: viper.GetString("REDIS.PASS"),
+		DB:       viper.GetInt("REDIS.DB"),
 	})
 	ping := Rdb.Ping(context.Background()).Val()
 	if ping != "PONG" {

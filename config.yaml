@@ -1,0 +1,11 @@
+REDIS:
+  ADDR: localhost:6379
+  PASS: ""
+  DB : 2
+
+MYSQL:
+  HOST: 127.0.0.1
+  USER: root
+  PASS: ""
+  DB_NAME: test
+  ENABLE_GORM_LOGGER: TRUE
