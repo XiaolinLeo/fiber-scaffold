@@ -15,7 +15,7 @@ var MySQL *gorm.DB
 var err error
 
 func SetupMySQL() {
-	username := viper.GetString("MYSQL.HOST")
+	username := viper.GetString("MYSQL.USER")
 	password := viper.GetString("MYSQL.PASS")
 	dbName := viper.GetString("MYSQL.DB_NAME")
 	dbHost := viper.GetString("MYSQL.HOST")
